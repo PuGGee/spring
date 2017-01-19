@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: spring_development
+
+test:
+  <<: *default
+  database: spring_test
+
+production:
+  <<: *default
+  database: spring_production
+  username: spring
+  password: <%= ENV['SPRING_DATABASE_PASSWORD'] %>
