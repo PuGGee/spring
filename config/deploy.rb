@@ -5,6 +5,8 @@ set :user, "lewis"
 set :stages, ["production"]
 set :default_stage, "production"
 
+set :rvm_ruby_version, '2.3.0@spring'
+
 set :scm, :git
 set :repo_url, "git@github.com:PuGGee/spring.git"
 set :branch, "master"
