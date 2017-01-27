@@ -1,0 +1,28 @@
+.tabbed-panel {
+  .tab, .tab-content {
+    overflow: hidden;
+  }
+
+  .tab-content {
+    .tab-content-slider {
+      left: 0px;
+      -webkit-transition: left 1s; /* Safari */
+      transition: left 1s;
+
+      display: inline-flex;
+      position: relative;
+
+      .tab {
+        display: inline-table;
+      }
+    }
+  }
+
+  .panel-heading {
+    border-bottom: none;
+  }
+}
+
+.panel.with-nav-tabs .panel-heading {
+  padding: 5px 5px 0 5px;
+}

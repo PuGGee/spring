@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  database: spring_development
+  database: spring_dev
 
 test:
   <<: *default
