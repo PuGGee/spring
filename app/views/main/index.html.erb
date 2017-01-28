@@ -1,23 +1,11 @@
-<div class="container main">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-
-          <%= render_component(:tabbed_pane) do |component| %>
-            <% component.add_tab('Books') do %>
-              <%= render 'first_tab' %>
-            <% end %>
-            <% component.add_tab('Movies') do %>
-              <%= render 'second_tab' %>
-            <% end %>
-            <% component.add_tab('Games') do %>
-              <%= render 'third_tab' %>
-            <% end %>
-          <% end %>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render_component(:tabbed_pane) do |component| %>
+  <% component.add_tab('Overview') do %>
+    <%= render 'first_tab' %>
+  <% end %>
+  <% component.add_tab('Buildings') do %>
+    <%= render 'second_tab' %>
+  <% end %>
+  <% component.add_tab('Units') do %>
+    <%= render 'third_tab' %>
+  <% end %>
+<% end %>
