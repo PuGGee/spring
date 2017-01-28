@@ -4,31 +4,17 @@
       <div class="panel panel-default">
         <div class="panel-body">
 
-          <div class="tabbed-panel panel panel-default with-nav-tabs">
-            <div class="panel-heading">
-              <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a data-tab="tab-1" href="#">Home</a></li>
-                <li role="presentation"><a data-tab="tab-2" href="#">Profile</a></li>
-                <li role="presentation"><a data-tab="tab-3" href="#">Messages</a></li>
-              </ul>
-            </div>
-            <div class="panel-body">
-              <div class="tab-content">
-                <span class="tab-content-slider">
-                  <div class="tab tab-1 active">
-                    <%= render 'first_tab' %>
-                  </div>
-                  <div class="tab tab-2">
-                    <%= render 'second_tab' %>
-                  </div>
-                  <div class="tab tab-3">
-                    <%= render 'third_tab' %>
-                  </div>
-                </span>
-              </div>
-            </div>
-
-          </div>
+          <%= render_component(:tabbed_pane) do |component| %>
+            <% component.add_tab('Books') do %>
+              <%= render 'first_tab' %>
+            <% end %>
+            <% component.add_tab('Movies') do %>
+              <%= render 'second_tab' %>
+            <% end %>
+            <% component.add_tab('Games') do %>
+              <%= render 'third_tab' %>
+            <% end %>
+          <% end %>
 
         </div>
       </div>

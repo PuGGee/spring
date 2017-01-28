@@ -1,0 +1,22 @@
+<div class="tabbed-pane panel panel-default with-nav-tabs">
+  <div class="panel-heading">
+    <ul class="nav nav-tabs">
+      <% component.tabs.each_with_index do |tab, index| %>
+        <li role="presentation" class="<%= 'active' if tab.active? %>">
+          <a data-tab="tab-<%= index + 1 %>" href="#"><%= tab.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <div class="tab-content">
+      <span class="tab-content-slider">
+        <% component.tabs.each_with_index do |tab, index| %>
+          <div class="tab tab-<%= index + 1 %>">
+            <%= tab.content %>
+          </div>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>
