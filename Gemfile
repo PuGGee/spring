@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'rb-readline'
+
 group :development, :test do
   gem 'pry-byebug'
 end
