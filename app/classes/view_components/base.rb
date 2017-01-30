@@ -12,10 +12,10 @@ module ViewComponents
 
     private
 
+    attr :options, :template
+
     def render_html
     end
-
-    attr :options, :template
 
     def component_name
       self.class.name.demodulize.underscore

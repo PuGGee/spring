@@ -8,4 +8,7 @@
   <% component.add_tab('Units') do %>
     and another!
   <% end %>
+  <% component.add_tab('Resources') do %>
+    <%= ajax_content resources_path %>
+  <% end %>
 <% end %>
