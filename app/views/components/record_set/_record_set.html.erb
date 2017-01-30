@@ -1,0 +1,7 @@
+<% component.attributes.each do |attribute| %>
+  <div class="input-group">
+    <span class="input-group-addon"><%= attribute.name %></span>
+    <span class="form-control"><%= attribute.value %></span>
+  </div>
+  <br/>
+<% end %>

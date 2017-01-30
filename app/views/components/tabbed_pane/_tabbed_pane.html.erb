@@ -1,5 +1,5 @@
-<div class="tabbed-pane panel panel-default with-nav-tabs">
-  <div class="panel-heading">
+<div class="tabbed-pane with-nav-tabs">
+  <div class="panel-heading tab-nav-heading">
     <ul class="nav nav-tabs">
       <% component.tabs.each_with_index do |tab, index| %>
         <li role="presentation" class="<%= 'active' if tab.active? %>">
@@ -8,7 +8,7 @@
       <% end %>
     </ul>
   </div>
-  <div class="panel-body">
+  <div class="panel-body tab-nav-body">
     <div class="tab-content">
       <span class="tab-content-slider">
         <% component.tabs.each_with_index do |tab, index| %>

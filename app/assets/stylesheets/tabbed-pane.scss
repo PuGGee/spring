@@ -20,11 +20,11 @@
     }
   }
 
-  .panel-heading {
+  .tab-nav-heading {
     border-bottom: none;
   }
-}
 
-.panel.with-nav-tabs .panel-heading {
-  padding: 5px 5px 0 5px;
+  .tab-nav-body {
+    padding-left: 30px;
+  }
 }

@@ -1,23 +1,6 @@
-<h1>Resources</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @resources.each do |resource| %>
-      <tr>
-        <td><%= link_to 'Show', resource %></td>
-        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
-        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Resource', new_resource_path %>
+<%= render_component(:record_set) do |component| %>
+  <% component.attribute 'Food', @resource.food %>
+  <% component.attribute 'Wood', @resource.wood %>
+  <% component.attribute 'Iron', @resource.iron %>
+  <% component.attribute 'Gold', @resource.gold %>
+<% end %>
