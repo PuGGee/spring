@@ -1,0 +1,22 @@
+<%= render_component(:record_set) do |component| %>
+  <% @buildings.each do |building| %>
+    <% component.attribute building.building_type.titlecase, building.quantity %>
+  <% end %>
+<% end %>
+
+<% if current_user.events.where(event_type: :construction).any? %>
+  <h3>Construction</h3>
+  <% current_user.events.where(event_type: :construction).each do |event| %>
+    <div class="row">
+      <div class="col-xs-3">
+      <label><%= event.value.titlecase %></label>
+      </div>
+      <div class="col-xs-9">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="<%= event.progress_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= event.progress_percentage %>%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

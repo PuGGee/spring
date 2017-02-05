@@ -1,5 +1,5 @@
 $(function() {
-  $('.nav-tabs a').on('click', function(event) {
+  $('.main').on('click', '.nav-tabs a', function(event) {
     event.preventDefault();
     var tabbed_pane = $(event.target).closest('.tabbed-pane');
     var tab_slider = tabbed_pane.children('.tab-nav-body').children('.tab-content').children('.tab-content-slider');

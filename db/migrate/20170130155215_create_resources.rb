@@ -3,7 +3,6 @@ class CreateResources < ActiveRecord::Migration[5.0]
     create_table :resources do |t|
       t.references :user, index: true
 
-
       t.integer :food, null: false, default: 0
       t.integer :wood, null: false, default: 0
       t.integer :iron, null: false, default: 0

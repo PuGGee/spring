@@ -7,6 +7,7 @@ module Services
 
     def init
       user.resource = starting_resource
+      user.armies << Army.new
       user.save
     end
 

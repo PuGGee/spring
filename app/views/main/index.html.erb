@@ -7,10 +7,13 @@
   <div class="col-xs-12 col-md-6">
     <%= render_component(:tabbed_pane) do |component| %>
       <% component.add_tab('Overview') do %>
-        here is some stuff
+        This is the overview of your kingdom. It tells you all kinds of useful stuff.
       <% end %>
       <% component.add_tab('Resources') do %>
         <%= ajax_content resources_path %>
+      <% end %>
+      <% component.add_tab('Buildings') do %>
+        <%= ajax_content buildings_path %>
       <% end %>
     <% end %>
   </div>

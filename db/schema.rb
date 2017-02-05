@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130155215) do
+ActiveRecord::Schema.define(version: 20170207215932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "armies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_armies_on_user_id", using: :btree
+  end
+
+  create_table "buildings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "building_type"
+    t.integer  "quantity",      default: 0, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["user_id"], name: "index_buildings_on_user_id", using: :btree
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "event_type"
+    t.datetime "finishes_at"
+    t.string   "value"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
 
   create_table "resources", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,6 +50,15 @@ ActiveRecord::Schema.define(version: 20170130155215) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.index ["user_id"], name: "index_resources_on_user_id", using: :btree
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.integer  "army_id"
+    t.string   "unit_type"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["army_id"], name: "index_units_on_army_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
